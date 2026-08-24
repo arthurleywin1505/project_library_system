@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Books</h2>
+<a class="btn" href="{% url 'book_add' %}">+ Add Book</a>
+<table>
+    <tr><th>Title</th><th>Author</th><th>Available Copies</th></tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.available_copies }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

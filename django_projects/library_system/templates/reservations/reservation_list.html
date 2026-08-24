@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Reservations</h2>
+<a class="btn" href="{% url 'reservation_add' %}">+ New Reservation</a>
+<table>
+    <tr><th>Book</th><th>Member</th><th>Date</th></tr>
+    {% for r in reservations %}
+    <tr>
+        <td>{{ r.book.title }}</td>
+        <td>{{ r.member.name }}</td>
+        <td>{{ r.reserved_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
